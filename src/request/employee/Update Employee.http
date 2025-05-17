@@ -1,0 +1,8 @@
+PUT http://localhost:8080/api/employees/1
+Content-Type: application/json
+
+{
+  "firstName": "Ujang",
+  "lastName": "Udin",
+  "email": "ujang@zapp.com"
+}
