@@ -5,7 +5,6 @@ import io.jsonwebtoken.*;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Component;
 
-import javax.naming.AuthenticationException;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
@@ -63,11 +62,7 @@ public class JwtUtil {
         return null;
     }
 
-    public boolean validateClaims(Claims claims) throws AuthenticationException {
+    public boolean validateClaims(Claims claims) {
         return claims.getExpiration().after(new Date());
-    }
-
-    public String getEmail(Claims claims) {
-        return claims.getSubject();
     }
 }
